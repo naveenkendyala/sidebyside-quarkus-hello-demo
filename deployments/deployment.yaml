@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: quarkus-hello-deploy
+  labels:
+    app: quarkus-hello
+spec:
+  replicas: 1
+  selector:
+  matchLabels:
+      app: quarkus-hello
+  template:
+    metadata:
+      labels:
+        app: quarkus-hello
+    spec:
+      containers:
+      - name: quarkus-hello-app
+        image: naveenkendyala/sidebyside-quarkus-hello-demo:1.0.1   
+        ports:
+          - containerPort: 8080
+        resources:
+          requests: 
+            memory: "100Mi"
+            cpu: "200m" 
+          limits:
+            memory: "100Mi"
+            cpu: "250m"
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /api/livecheck
+          initialDelaySeconds: 3
+          periodSeconds: 10
+          timeoutSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /api/healthcheck
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 10
