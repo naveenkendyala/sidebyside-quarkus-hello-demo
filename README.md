@@ -56,7 +56,7 @@ oc get nodes
 oc config use-context cluster1
 ```
 
-## Deploy Quarkus cafe Application on ACM Hub
+## Deploy Quarkus Hello Application on ACM Hub
 **From ACM**  
 Login to ACM Managed cluster (OCP4 ACM Hub)
 
@@ -82,9 +82,9 @@ pathname: 'https://github.com/naveenkendyala/sidebyside-quarkus-hello-demo.git
 ### Configure Services using kustomize
 * imageTag is located under the kustomiztion.yaml in each directory 
 
-### Collect the quarkus cafe endpoints for config files below 
+### Collect the quarkus hello endpoints for config files below 
 
-**Update routes for Quarkus Cafe Application**
+**Update routes for Quarkus hello Application**
 ```
 cp  clusters/overlays/cluster1/quarkus-hello-app/route.yaml.backup clusters/overlays/cluster1/quarkus-hello-app/route.yaml
 
@@ -111,8 +111,6 @@ sed -i "s/changeme/${ROUTE_CLUSTER2}/" clusters/overlays/cluster2/quarkus-hello-
 # Replace the value of changeme with `ROUTE_CLUSTER3` in the file `route.yaml`  ::: OPTIONAL
 sed -i "s/changeme/${ROUTE_CLUSTER3}/" clusters/overlays/cluster3/quarkus-hello-app/route.yaml
 ```
-
-ROUTE_CLUSTER1=quarkus-hello-app-quarkus-hello-demo.$(oc get ingresses.config.openshift.io cluster -o jsonpath='{ .spec.domain }')
 
 ## Review cluster configuration
 **Cluster1**
@@ -208,3 +206,7 @@ curl -s http://$ROUTE_CLUSTER2/api/hello
 ROUTE_CLUSTER3=quarkus-hello-app-quarkus-hello-demo.$(oc --context=cluster3 get ingresses.config.openshift.io cluster -o jsonpath='{ .spec.domain }')
 curl -s http://$ROUTE_CLUSTER3/api/hello
 ```
+
+
+## Quarkus Hello App Policies
+[Quarkus Hello App Policies](quarkus-hello-acm-policys.md)
