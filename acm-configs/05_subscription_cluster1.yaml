@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: quarkus-hello-app-cluster1
+  namespace: quarkus-hello-demo
+  labels:
+    deployment: quarkus-hello-app
+  annotations:
+    apps.open-cluster-management.io/github-branch: master
+    apps.open-cluster-management.io/github-path: clusters/overlays/cluster1
+spec:
+  channel:  quarkus-hello-demo/quarkus-hello-demo-channel
+  placement: 
+    placementRef: 
+      kind: PlacementRule
+      name: cluster1
