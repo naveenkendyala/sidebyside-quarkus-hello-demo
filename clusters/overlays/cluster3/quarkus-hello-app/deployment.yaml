@@ -1,0 +1,33 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: quarkus-hello-app
+  labels:
+    app: quarkus-hello-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quarkus-hello-app
+  template:
+    metadata:
+      labels:
+        app:  quarkus-hello-app
+        app.kubernetes.io/component: quarkus-hello-app
+        app.kubernetes.io/instance: quarkus-hello-app
+        app.kubernetes.io/part-of: quarkus-hello
+        quarkus-cafe: ""
+    spec:
+      containers:
+        - name: quarkus-hello-app
+          image: >-
+            quay.io/naveenkendyala/quarkus-demo-quarkusjvm-hello:v1
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8778
+              protocol: TCP
+            - containerPort: 9779
+              protocol: TCP
+          resources: {}
+          imagePullPolicy: IfNotPresent

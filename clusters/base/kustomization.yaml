@@ -1,0 +1,2 @@
+resources:
+-  quarkus-hello-app-service.yaml
