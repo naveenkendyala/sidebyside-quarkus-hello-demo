@@ -20,8 +20,7 @@ spec:
     spec:
       containers:
         - name: quarkus-hello-app
-          image: >-
-            quay.io/naveenkendyala/quarkus-demo-quarkusjvm-hello:v1
+          image: quay.io/naveenkendyala/quarkus-demo-quarkusjvm-hello:v1
           ports:
             - containerPort: 8080
               protocol: TCP
