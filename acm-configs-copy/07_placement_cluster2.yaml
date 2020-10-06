@@ -1,0 +1,12 @@
+
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: racm-poc-qa-pr
+  namespace: acm-demo
+  labels:
+    app: acm-quarkus  
+spec:
+  clusterSelector:
+    matchLabels:
+      clusterid: racm-poc-qa
