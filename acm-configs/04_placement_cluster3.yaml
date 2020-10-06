@@ -1,9 +1,9 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: cluster1
+  name: racm-poc-prod
   namespace: quarkus-hello-demo
 spec:
   clusterSelector:
     matchLabels:
-      clusterid: cluster3
+      clusterid: racm-poc-prod

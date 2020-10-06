@@ -2,8 +2,10 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: racm-poc-dev
-  namespace: quarkus-hello-demo
+  name: racm-poc-dev-pr
+  namespace: acm-demo
+  labels:
+    app: acm-quarkus  
 spec:
   clusterSelector:
     matchLabels:
