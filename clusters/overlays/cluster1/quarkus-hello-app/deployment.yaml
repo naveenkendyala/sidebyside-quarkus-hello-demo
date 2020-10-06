@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: quarkus-hello-app
+  namespace: acm-demo
   labels:
     app: acm-quarkus
 spec:

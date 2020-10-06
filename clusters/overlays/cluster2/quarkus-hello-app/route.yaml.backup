@@ -2,13 +2,13 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: quarkus-hello-app
-  namespace: quarkus-hello-demo
+  namespace: acm-demo
 spec:
   host: changeme
   port:
     targetPort: 8080-tcp
   to:
     kind: Service
-    name: quarkus-hello-app
+    name: acm-quarkus-svc
     weight: 100
   wildcardPolicy: None

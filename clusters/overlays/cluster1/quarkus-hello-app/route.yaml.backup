@@ -9,6 +9,6 @@ spec:
     targetPort: 8080-tcp
   to:
     kind: Service
-    name: quarkus-hello-app
+    name: acm-quarkus-svc
     weight: 100
   wildcardPolicy: None
