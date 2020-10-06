@@ -2,4 +2,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: quarkus-hello-demo
+  name: acm-demo
