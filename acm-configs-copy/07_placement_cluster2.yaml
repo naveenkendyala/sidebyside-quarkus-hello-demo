@@ -5,7 +5,7 @@ metadata:
   name: racm-poc-qa-pr
   namespace: acm-demo
   labels:
-    app: acm-quarkus  
+    app: acm-quarkus
 spec:
   clusterSelector:
     matchLabels:
