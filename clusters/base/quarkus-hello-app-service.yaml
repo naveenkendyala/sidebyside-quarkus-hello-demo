@@ -1,9 +1,9 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: quarkus-hello-app
+  name: acm-quarkus-svc
   labels:
-    app: quarkus-hello-app
+    app: acm-quarkus
 spec:
   ports:
     - name: 8080-tcp
@@ -19,7 +19,7 @@ spec:
       port: 9779
       targetPort: 9779
   selector:
-    app: quarkus-hello-app
+    app: acm-quarkus
   type: ClusterIP
   sessionAffinity: None
 

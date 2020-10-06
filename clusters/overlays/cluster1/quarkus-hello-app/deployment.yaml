@@ -3,20 +3,16 @@ apiVersion: apps/v1
 metadata:
   name: quarkus-hello-app
   labels:
-    app: quarkus-hello-app
+    app: acm-quarkus
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: quarkus-hello-app
+      app: acm-quarkus
   template:
     metadata:
       labels:
-        app:  quarkus-hello-app
-        app.kubernetes.io/component: quarkus-hello-app
-        app.kubernetes.io/instance: quarkus-hello-app
-        app.kubernetes.io/part-of: quarkus-hello
-        quarkus-cafe: ""
+        app: acm-quarkus
     spec:
       containers:
         - name: quarkus-hello-app
