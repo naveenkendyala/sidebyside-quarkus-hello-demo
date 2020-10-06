@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: acm-quarkus-svc
+  namespace: acm-demo
   labels:
     app: acm-quarkus
 spec:
