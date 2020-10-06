@@ -1,8 +1,0 @@
-apiVersion: apps.open-cluster-management.io/v1
-kind: Channel
-metadata:
-  name: quarkus-hello-demo-channel
-  namespace: quarkus-hello-demo
-spec:
-  pathname: 'https://github.com/naveenkendyala/sidebyside-quarkus-hello-demo.git'
-  type: GitHub

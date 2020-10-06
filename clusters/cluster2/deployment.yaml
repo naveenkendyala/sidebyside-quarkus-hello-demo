@@ -25,5 +25,24 @@ spec:
               protocol: TCP
             - containerPort: 9779
               protocol: TCP
-          resources: {}
           imagePullPolicy: IfNotPresent
+          resources:
+            requests: 
+              memory: "100Mi"
+              cpu: "200m" 
+            limits:
+              memory: "100Mi"
+              cpu: "250m"
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /api/livecheck
+            initialDelaySeconds: 3
+            periodSeconds: 10
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /api/healthcheck
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 10

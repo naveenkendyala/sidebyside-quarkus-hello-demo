@@ -1,8 +1,0 @@
-resources:
-- deployment.yaml
-- route.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-images:
-- name: quay.io/naveenkendyala/quarkus-demo-quarkusjvm-hello
-  newTag: v1
